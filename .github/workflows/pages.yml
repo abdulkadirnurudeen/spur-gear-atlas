@@ -1,0 +1,137 @@
+name: Publish SpurAtlas to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  check-and-package:
+    permissions:
+      contents: write
+      pages: read
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the release
+        uses: actions/checkout@v6
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Import the verified release on first publication
+        id: import
+        if: ${{ hashFiles('dist/index.html') == '' }}
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+        run: |
+          python3 - <<'PYTHON'
+          from pathlib import Path
+          from urllib.parse import urlsplit
+          import hashlib, json, os, zipfile
+          
+          root = Path.cwd().resolve()
+          archive = root / 'SpurAtlas-0.6.0-GitHub-source.zip'
+          expected = 'f83fa798d3895f6ae47b11ee169bcbedf55a1f8edf11008e56189a3b750bc07c'
+          site = os.environ['SITE_URL'].rstrip('/')
+          assert urlsplit(site).scheme == 'https' and urlsplit(site).hostname.endswith('.github.io')
+          assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected
+          with zipfile.ZipFile(archive) as z:
+              assert z.testzip() is None
+              for info in z.infolist():
+                  assert info.filename.startswith('SpurAtlas/')
+                  rel = Path(info.filename.removeprefix('SpurAtlas/'))
+                  if not rel.parts or info.is_dir() or rel.parts[0] == '.github':
+                      continue
+                  assert not rel.is_absolute() and '..' not in rel.parts
+                  assert '.git' not in rel.parts and '.openai' not in rel.parts
+                  target = root / rel
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(z.read(info))
+          
+          proof_path = root / 'GITHUB_PAGES_PROVENANCE.json'
+          proof = json.loads(proof_path.read_text())
+          for name, digest in proof['source_sha256'].items():
+              assert hashlib.sha256((root / name).read_bytes()).hexdigest() == digest, name
+          
+          old = 'https://nurudeen-gear-atlas.abdulkadirnurudeen.chatgpt.site'
+          adjusted = ['CITATION.cff', 'dist/data/CITATION.cff', 'dist/design-ui.js']
+          for name in adjusted:
+              path = root / name
+              text = path.read_text()
+              assert text.count(old) == 1, name
+              path.write_text(text.replace(old, site))
+          proof['scope_of_changes'] = 'GitHub Pages publication; hosting links adjusted without changes to scientific inputs or calculation rules'
+          proof['github_site_url'] = site + '/'
+          proof['import_archive_sha256'] = expected
+          proof['hosting_only_modified_paths'] = adjusted + ['dist/data/reproduction-bundle.zip']
+          proof_path.write_text(json.dumps(proof, indent=2) + '\n')
+          checks_path = root / 'GITHUB_PAGES_CHECKS.json'
+          checks = json.loads(checks_path.read_text())
+          checks.pop('github_publication_performed', None)
+          checks['github_site_url'] = site + '/'
+          checks_path.write_text(json.dumps(checks, indent=2) + '\n')
+          (root / 'GITHUB_PAGES.md').write_text('''# SpurAtlas on GitHub Pages
+          
+          The website is published from dist/ by .github/workflows/pages.yml after the
+          software checks pass. Its pages, engineering data, numerical models and
+          appearance come from SpurAtlas release 0.6.0. Hosting links are recorded in
+          CITATION.cff and GITHUB_PAGES_PROVENANCE.json.
+          
+          On the first run, the workflow verifies the uploaded source archive against
+          its SHA-256 identity, imports the source and adjusts the website links.
+          Subsequent runs use the tracked source directly. The reproduction package is
+          rebuilt after changes to its included files. No finite-element solve is run.
+          
+          The earlier hosted Atlas remains available. GitHub publication does not add
+          physical validation or production qualification to the retained research.
+          
+          Software archive: https://doi.org/10.5281/zenodo.24165269
+          Supporting numerical release: https://doi.org/10.5281/zenodo.24144925
+          Original benchmark: https://doi.org/10.5281/zenodo.24055230
+          
+          Software: MIT. Research data: CC BY 4.0. Third-party rights are retained.
+          ''')
+          print('Verified 119 original source files; adjusted hosting links only.')
+          PYTHON
+          python3 tools/package_reproduction.py
+          echo "imported=true" >> "$GITHUB_OUTPUT"
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - name: Run all software checks
+        run: npm test
+      - name: Preserve the checked source in the repository
+        if: steps.import.outputs.imported == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm SpurAtlas-0.6.0-GitHub-source.zip
+          git add -A
+          git commit -m "Publish verified SpurAtlas 0.6.0 source and hosting links"
+          git push origin HEAD:main
+      - name: Package the existing website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: check-and-package
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publish the checked website
+        id: deployment
+        uses: actions/deploy-pages@v4
