@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite this software release and the specific supporting data release used."
+type: software
+title: "SpurAtlas: Geometry, Strength and Carbon Payback"
+version: 0.6.0
+doi: 10.5281/zenodo.24165269
+date-released: '2026-11-12'
+authors:
+  - family-names: Nurudeen
+    given-names: Abdulkadir Oshioze
+    orcid: 'https://orcid.org/0000-0002-2646-5784'
+url: 'https://abdulkadirnurudeen.github.io/spur-gear-atlas'
+license: MIT
+references:
+  - type: data
+    title: 'Supporting Finite-Element Fields and Regeneration Code for Perforated-Spur-Gear Strength Retention'
+    version: 2.0.0
+    doi: 10.5281/zenodo.24144925
+    authors:
+      - family-names: Nurudeen
+        given-names: Abdulkadir Oshioze
+        orcid: 'https://orcid.org/0000-0002-2646-5784'

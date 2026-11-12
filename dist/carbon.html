@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e35">
+  <meta name="description" content="Review the original manufacturing-carbon scenarios for two documented 40-tooth gear cases.">
+  <title>Carbon payback — SpurAtlas</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body data-page="carbon">
+<a class="skip" href="#top">Skip to page content</a>
+<header class="site-header">
+  <a href="index.html" class="brand" aria-label="SpurAtlas home"><span class="brand-mark" aria-hidden="true">S<span>•</span></span><span>SpurAtlas<span class="brand-sub">GEAR DESIGN RESEARCH</span></span></a>
+  <button class="menu-toggle" id="menu-toggle" aria-controls="main-nav" aria-expanded="false">Menu <span aria-hidden="true"><svg class="icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5H17M3 10H17M3 15H17"/></svg></span></button>
+  <nav id="main-nav" aria-label="Main navigation"><a href="design.html">Design check</a><a href="explore.html">Explore</a><a href="carbon.html" aria-current="page">Carbon payback</a><a href="evidence.html">Evidence & methods</a><a href="about.html">About</a></nav>
+  <a class="header-link" href="https://doi.org/10.5281/zenodo.24144925" target="_blank" rel="noopener">Source record <span aria-hidden="true"><svg class="icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16L16 4M4 4H16V16"/></svg></span></a>
+</header>
+<main id="top" tabindex="-1"><div class="wrap page-trail"><div><a href="index.html">Home</a><span aria-hidden="true"> / </span><span>Carbon payback</span></div><a id="current-design-link" class="subtle-link" href="design.html">Start a design comparison</a></div><div class="wrap linked-design-note"><p>These are the original two 40-tooth case studies. For the geometry selected in your design comparison, <a href="design.html#matched-carbon-panel">open its matched carbon calculation</a>.</p></div><div class="wrap page-error" id="page-error" role="alert" hidden><p>The research data could not be loaded. Reload this page or use the supporting source record.</p><button id="page-retry" class="button ghost small">Reload page</button></div>  <section class="carbon-section" id="carbon" aria-labelledby="carbon-title"><div class="wrap">
+    <div class="section-heading"><div><span class="section-number">02 / MANUFACTURING & SERVICE</span><h1 id="carbon-title">When does less mass pay back?</h1><p>Compare the calculated emissions from making the openings with the mass-related savings during service.</p></div><span class="light-tag">Separate 40-tooth case studies</span></div>
+    <div class="carbon-layout"><div class="carbon-copy"><label for="carbon-layout">Documented layout</label><select id="carbon-layout"><option value="circle">Circular · opening scale 0.800</option><option value="sector">Rounded sector · opening scale 0.950</option></select><label for="frv">Mass-related fuel saving</label><select id="frv"><option value="0.15">0.241402 L / (100 miles · 100 kg)</option><option value="0.26">0.418429 L / (100 miles · 100 kg)</option></select><label for="carbon-mileage">Designer service mileage · miles</label><input id="carbon-mileage" type="number" min="0" step="any" required><p id="carbon-mileage-status" role="status"></p><p class="carbon-help">200 mm pitch diameter · same starting blank. Each range spans the retained process scenarios at the selected fuel-saving value.</p><div class="payback-result"><span><i class="route-dot milling"></i> Milling</span><strong id="milling-payback">—</strong><small>miles to calculated carbon payback</small></div><div class="payback-result"><span><i class="route-dot wire"></i> Wire EDM</span><strong id="wire-payback">—</strong><small>miles to calculated carbon payback</small></div><a class="subtle-link on-dark" href="data/carbon-scenarios.csv" download>Download the 48 original scenarios <span aria-hidden="true"><svg class="icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3V17M4 11L10 17L16 11"/></svg></span></a></div><div class="carbon-chart-card"><div class="carbon-chart-title"><h3>Manufacturing burden, recovered over time</h3><span>Perforated minus solid</span></div><div id="carbon-chart"></div><div class="carbon-chart-legend"><span><i class="legend-line milling"></i> Milling</span><span><i class="legend-line wire"></i> Wire EDM</span><span><i class="range-swatch"></i> Scenario range</span></div><p id="carbon-description"></p></div></div><div id="original-milling-recipe"></div>
+    <p class="carbon-boundary">The chosen mileage is a designer-declared service scenario. The mechanical fatigue assessment remains at five million counted stress cycles; it does not establish component life. Payback also requires the manufactured gear to retain sufficient fatigue capacity. These examples are a defined climate comparison, not a complete certified product LCA.</p>
+  </div></section>
+
+</main>
+<footer class="site-footer wrap"><div class="footer-brand">SpurAtlas <span>GEAR ATLAS</span></div><p>© 2026 Abdulkadir Oshioze Nurudeen<br>Research tool 0.6.0 · 12 November 2026</p><div><a href="data/DATA-LICENCE.txt" target="_blank">Data · CC BY 4.0</a><a href="data/SOFTWARE-LICENCE.txt" target="_blank">Software · MIT</a><a href="#top">Back to top <svg class="icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17V3M4 9L10 3L16 9"/></svg></a></div></footer>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<noscript><div class="noscript">The interactive atlas needs JavaScript. You can still <a href="data/test-responses.csv">download the reference data</a> or <a href="https://doi.org/10.5281/zenodo.24144925">read the source record</a>.</div></noscript>
+</body>
+</html>

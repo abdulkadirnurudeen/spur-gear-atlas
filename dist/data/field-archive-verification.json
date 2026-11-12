@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-12",
+  "scope": "Downloaded archive bytes and selected mesh/history members checked against retained manifests; no new FE solve",
+  "archives": [
+    {
+      "name": "JMD_Review_20261111_prospective_orthogonal42_phi50_r56_Part01of01.zip",
+      "status": "PASS",
+      "bytes": 223280153,
+      "archiveSha256": "67167f899034e74873a9de5b9f7a7fa4e1084b98221af75c143f57567e15d70c"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_orthogonal42_phi35_r60_Part01of01.zip",
+      "status": "PASS",
+      "bytes": 231112655,
+      "archiveSha256": "71dccafe283307fd807acafc7ee77908e6d98735cd0e1cee0d6ffa981270582a"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_orthogonal42_phi50_r60_Part01of01.zip",
+      "status": "PASS",
+      "bytes": 222391061,
+      "archiveSha256": "2bc6529cac530f22f748a50093644e4d725a3f86f6cb7c8132883bf9ca931b1e"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_orthogonal42_phi35_r56_Part01of01.zip",
+      "status": "PASS",
+      "bytes": 231090514,
+      "archiveSha256": "37c26a72ea577a50caf2129615d7de8765acff3ed6f6499b0d14f6394e3203b0"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_superellipse46_s0705_Part01of02.zip",
+      "status": "PASS",
+      "bytes": 244262358,
+      "archiveSha256": "e854b89a87b44c21bc9b5f2989e531812ef6e25e9828865c50cc754717a18e56"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_superellipse46_s0910_Part01of01.zip",
+      "status": "PASS",
+      "bytes": 243124068,
+      "archiveSha256": "0d606717bfb00ed4cfc9acfb6ad15abf127bd0744d8def29368f7f35100f8d2f"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_sector46_s0910_Part01of01.zip",
+      "status": "PASS",
+      "bytes": 232755339,
+      "archiveSha256": "fd17e322d54726ea39345ef26d03a8dfd259982d8d0f97b7f4b16e22182c060e"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_sector46_s0705_Part01of02.zip",
+      "status": "PASS",
+      "bytes": 241475253,
+      "archiveSha256": "fff2621bd5bf79e1cd6f7c3380d09dbc30567206079ce52c9d3b547bc7c3b7a4"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_circle46_s0910_Part01of01.zip",
+      "status": "PASS",
+      "bytes": 244085628,
+      "archiveSha256": "7bd8bce252e947df2a1544a9a7742c2fb66f0752f935021984eed467c0717f90"
+    },
+    {
+      "name": "JMD_Review_20261111_prospective_circle46_s0705_Part01of02.zip",
+      "status": "PASS",
+      "bytes": 243542581,
+      "archiveSha256": "4870fae507add92695f556f8a16e7046ede5693707bde8ea5b28862c15c7333f"
+    }
+  ]
+}

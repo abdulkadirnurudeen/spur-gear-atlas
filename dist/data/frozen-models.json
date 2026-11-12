@@ -1,0 +1,54 @@
+{
+  "powerLawBased": {
+    "coefficient_theta": {
+      "static": [
+        0.36860698868241965,
+        0.6176121975296256,
+        0.6449141362913628,
+        3.301232157123014,
+        1.1498741035753364,
+        0.14009044280907731
+      ],
+      "fatigue": [
+        -0.9053267842610306,
+        -0.37600599320657446,
+        -0.571864942421374,
+        1.589446091612548,
+        1.6725615536303773,
+        -0.10094173235805487
+      ]
+    },
+    "policy": "Published full-law coefficients unchanged; no test fitting."
+  },
+  "secondaryHarmonic": {
+    "recorded_UTC": "2026-11-11T09:18:15.784268+00:00",
+    "theta": [
+      0.4577689083623807,
+      0.5399918748884964,
+      0.7064877258880299,
+      0.2331900114519859,
+      0.6827595474742533,
+      0.5408637369697707,
+      3.276443331122138,
+      1.1541693825695425
+    ],
+    "parameter_order": [
+      "log_K_circle_T",
+      "log_K_sector_T",
+      "log_K_superellipse_T",
+      "log_K_circle_P",
+      "log_K_sector_P",
+      "log_K_superellipse_P",
+      "n",
+      "m"
+    ],
+    "equation": "R_T=(1+K_hT*phi^n*b_R^-m)^-1; R_P=(1+K_hP*phi^n*b_R^-m)^-1; R(a,b)=(a/F0T+b/F0P)/(a/(R_T*F0T)+b/(R_P*F0P))",
+    "reference_input": "Matched solid anchor factors are physical model inputs; no perforated prospective response may be used to alter coefficients",
+    "development_rows_sha256": "c1b5ed4f8406b51b93b643fd8bf94f294aebaf32841c0759af592920dc868195",
+    "development_code_sha256": "b12956225202c32519006cef54d0fbe63cd67203006e379955684aa4739ea416",
+    "fresh_geometry_protocol_sha256": "ff8216fa6878aba845182e679959f506b6876e19ba9fcd0c03e0aa4a0ec2bb54",
+    "evaluation_rule": "Evaluate unchanged on all ten registered layouts; compare with exponential6 using identical global harmonic targets, five mixtures, all layouts and registered 10% P95 ceiling",
+    "role": "Secondary static formulation frozen before prospective FE response generation. Original six-layout outcomes are exposed development diagnostics, not fresh evaluation.",
+    "fatigue_policy": "Original six-parameter fatigue relation unchanged"
+  }
+}

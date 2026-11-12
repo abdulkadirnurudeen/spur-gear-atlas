@@ -1,0 +1,332 @@
+{
+  "G01": {
+    "image": "assets/case-fields/G01_Troot_tooth16_reference.png",
+    "tooth": 16,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 1.1102230246251565e-16,
+    "topSurfaceStressMaxMPa": [
+      51.170924052315264,
+      41.46790429668092
+    ],
+    "wholeMeshStressMaxMPa": [
+      60.37237374316694,
+      49.186703413893675
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      9.431816768619216,
+      8.093876688647436
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/orthogonal42_phi35_r56/mesh.npz": "055073887ac862bf5dc588c2a08ffd380de949039cc7bc92dcd4283b8e6c472b",
+      "review_program/prospective/output/cases/orthogonal42_phi35_r56/tooth16.npz": "5da1cabe1e6f3491e2f89c6ec90cfdcaae74420d8465a255f9de1fd3b78b1c2c"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "e814c846fb089ec6276940b3d107280a3ec2d494b54569c67c6509fa997dc1da",
+    "newElasticitySolve": false
+  },
+  "G02": {
+    "image": "assets/case-fields/G02_Troot_tooth25_reference.png",
+    "tooth": 25,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      53.16692067800818,
+      43.12395606104151
+    ],
+    "wholeMeshStressMaxMPa": [
+      64.31523743102686,
+      51.504990179111
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      8.74980827465663,
+      7.502445719775143
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/orthogonal42_phi35_r60/mesh.npz": "8af8276154bce2ae7db531519246a28fd047857184d96de74ad91a1a4fa2bf64",
+      "review_program/prospective/output/cases/orthogonal42_phi35_r60/tooth25.npz": "2d2a985061c6e0e12c431860e02200907273add103baf72154bb02768f3454ca"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "e542db2d9d88ad2162153d6c741806fcf99366fefb2607a493a767a70001f043",
+    "newElasticitySolve": false
+  },
+  "G03": {
+    "image": "assets/case-fields/G03_Troot_tooth07_reference.png",
+    "tooth": 7,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      55.87774283378932,
+      44.11005063607822
+    ],
+    "wholeMeshStressMaxMPa": [
+      67.81283183882147,
+      53.36773010970333
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      17.09225928241901,
+      14.56024861904389
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/orthogonal42_phi50_r56/mesh.npz": "7ba46acca135b48377df0241dab83947aa23151d48ce998d9e2ab6af21a2e48a",
+      "review_program/prospective/output/cases/orthogonal42_phi50_r56/tooth07.npz": "c2ebfbdce1be8e08626cbb3858637757c9f1b17f5255a7918b17dd79480a87f9"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "0e2394a18f0a1da6249db67d7c4e8ba9eea44d5dfb06942f053b7aaba5d51a17",
+    "newElasticitySolve": false
+  },
+  "G04": {
+    "image": "assets/case-fields/G04_Troot_tooth33_reference.png",
+    "tooth": 33,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      74.86730999599428,
+      58.197233665040265
+    ],
+    "wholeMeshStressMaxMPa": [
+      79.73501525959563,
+      61.03258912967004
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      14.952382624248935,
+      12.554025442045734
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/orthogonal42_phi50_r60/mesh.npz": "c73c725d5d37e08075c11636ad14487aad4a590f1083f4f655d80ed9c126402f",
+      "review_program/prospective/output/cases/orthogonal42_phi50_r60/tooth33.npz": "6bac0d5d5bd5a41fa9486b798fc97e5fddb204493fe492feda6023060a7a6293"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "37a24ca6f674379e102011a47f91d1e9ee6365a196a27e1c44a277d30976e382",
+    "newElasticitySolve": false
+  },
+  "G05": {
+    "image": "assets/case-fields/G05_Troot_tooth08_reference.png",
+    "tooth": 8,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      55.71860391524776,
+      45.2665755725186
+    ],
+    "wholeMeshStressMaxMPa": [
+      66.74721004303697,
+      53.81551849860046
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      8.902440053567906,
+      7.607738375354513
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/circle46_s0705/mesh.npz": "b3024212565e33e6658586bb3f17afed7571ddb4f02124d839f14c4127a4819b",
+      "review_program/prospective/output/cases/circle46_s0705/tooth08.npz": "53809934c7a5519641f55363dc282c403e79f97ea473fee11d17c83a90748d93"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "ad11fe0ee76f888ef7258b574bfbd61f575fb68d96bda1c373b66200173cdded",
+    "newElasticitySolve": false
+  },
+  "G06": {
+    "image": "assets/case-fields/G06_Troot_tooth27_reference.png",
+    "tooth": 27,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      74.78884075672302,
+      59.94116585426325
+    ],
+    "wholeMeshStressMaxMPa": [
+      85.34217238968428,
+      67.643030560458
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      19.984358021381286,
+      16.95257380264891
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/circle46_s0910/mesh.npz": "5768d74ea1915fa9cfdc3407283e0216632b830d1cdc08af04dc2bfa40e38ea5",
+      "review_program/prospective/output/cases/circle46_s0910/tooth27.npz": "18c6fef8ef50bf0c47301a2e8a9f826d0294959dd99bccbe495d34435e04c6ea"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "d078cea9908101c58ddbbda6a97451c07a00607ecad915f2b1457f260ac6bde4",
+    "newElasticitySolve": false
+  },
+  "G07": {
+    "image": "assets/case-fields/G07_Troot_tooth26_reference.png",
+    "tooth": 26,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      56.82963781246192,
+      45.70963020915837
+    ],
+    "wholeMeshStressMaxMPa": [
+      66.81202975624808,
+      53.413229042873176
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      14.339104963420834,
+      11.82418733084126
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/sector46_s0705/mesh.npz": "d3bcc6694f75113b4978202316623135e6167225cb3c645f264008088f3bae5d",
+      "review_program/prospective/output/cases/sector46_s0705/tooth26.npz": "1eb474af0a5e166f923b6f801cd42f1e55a08f97adf0f269d71b142b85aaaa83"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "63e47cb87eba868a9183651ba52f285f2a292fe8ff398a32e32f36020e249835",
+    "newElasticitySolve": false
+  },
+  "G08": {
+    "image": "assets/case-fields/G08_Troot_tooth26_reference.png",
+    "tooth": 26,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      97.28861200925698,
+      91.39872344349462
+    ],
+    "wholeMeshStressMaxMPa": [
+      111.60404150240986,
+      106.16544294302234
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      89.95840720048542,
+      76.26108678103488
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/sector46_s0910/mesh.npz": "2197c29d3a9836ee95d2681ff8d619a28d50da658a43298d1f09632637f72117",
+      "review_program/prospective/output/cases/sector46_s0910/tooth26.npz": "9efbe416185b33c014024259246b99ee3698d5b5a4b7460b90c54bd70b43ac96"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "e9a036b6a182550a9681a23ef1ed4c490efa5697a096b1b2bce3a7f3f6961484",
+    "newElasticitySolve": false
+  },
+  "G09": {
+    "image": "assets/case-fields/G09_Troot_tooth36_reference.png",
+    "tooth": 36,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      54.87146481031807,
+      44.55803983826012
+    ],
+    "wholeMeshStressMaxMPa": [
+      65.84359350528187,
+      53.35938164197424
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      8.496569301897276,
+      7.167011786854365
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/superellipse46_s0705/mesh.npz": "e76528e9427564edcededdfb2d9fd298dfd8863b2d7f7504960f97a52eb1dde0",
+      "review_program/prospective/output/cases/superellipse46_s0705/tooth36.npz": "bfb83f38806c12727c750a6b32c459af8e3c0a1d971a6319746eaecf0d5e1ec4"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "df092c4b39e14464a33689b67ac6a6f849159fd77d72f127e0a8081b43b30931",
+    "newElasticitySolve": false
+  },
+  "G10": {
+    "image": "assets/case-fields/G10_Troot_tooth36_reference.png",
+    "tooth": 36,
+    "loadReferences": [
+      "T",
+      "P"
+    ],
+    "materialReference": "E 210 GPa, nu 0.3; stored research steel",
+    "view": "Axial top surface, undeformed coordinates. P1 stress is unsmoothed per element; displacement is nodal P1 magnitude. The selected tooth position governs retained T tooth-root regional stress, not necessarily every region or P.",
+    "regionalRecoveryMaximumRelativeDiscrepancy": 2.220446049250313e-16,
+    "topSurfaceStressMaxMPa": [
+      77.98032247184308,
+      57.1774305399137
+    ],
+    "wholeMeshStressMaxMPa": [
+      93.60750031490845,
+      69.78312701722673
+    ],
+    "topSurfaceDisplacementMaxMicrometre": [
+      18.466178471981856,
+      15.200217736232613
+    ],
+    "rawSourceFiles": {
+      "review_program/prospective/output/cases/superellipse46_s0910/mesh.npz": "d2309279236d81dc3af783ee97dd1e62322d6c52230bf9ca40c1708bde9da3bd",
+      "review_program/prospective/output/cases/superellipse46_s0910/tooth36.npz": "8104f011609c48be40e0c8ca1e50269dd82496cd72af0aceed1d9e569bd83785"
+    },
+    "recoverySourceHashes": {
+      "Code_S2/implementation/review_work/native/extracted/archived_source/original_drivers/recover_fatigue_history.py": "8ba4a60a17c9f91ada70e9432d35f6b6a3a8c478e24eb66ab1e7ffad8d0fedc1",
+      "Code_S2/implementation/review_work/native/extracted/archived_source/gear_steel_design/recover_objective_regions.py": "e8e7f22ee0a5862955f4304e304890890f078f7f70ebdcefdcc5dd85c8e40b89"
+    },
+    "imageSha256": "70d6b16d956c996ce5defc1f70c205129bfccf8976396cfb057a29bd1afdb1e6",
+    "newElasticitySolve": false
+  }
+}

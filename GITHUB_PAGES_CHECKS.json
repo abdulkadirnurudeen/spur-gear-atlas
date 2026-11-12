@@ -1,0 +1,21 @@
+{
+  "software": "SpurAtlas",
+  "version": "0.6.0",
+  "source_commit": "cb693e84b9dd418659e3bbcb202a0f800776fdce",
+  "copied_source_files_verified": 119,
+  "website_pages_checked": 6,
+  "link_and_module_checks_passed": 141,
+  "software_tests_passed": 29,
+  "software_tests_failed": 0,
+  "browser_project_subdirectory": "/SpurAtlas/",
+  "browser_G07_checks": {
+    "milling_electricity_kWh_displayed": 12.3413,
+    "payback_miles_displayed": 14528,
+    "recorded_required_capacity_percent_displayed": 52.96,
+    "conditional_required_capacity_percent_displayed": 59.63
+  },
+  "browser_JSON_and_HTML_downloads": true,
+  "browser_JSON_replayed_identically_except_timestamp": true,
+  "source_site_modified": false,
+  "github_site_url": "https://abdulkadirnurudeen.github.io/spur-gear-atlas/"
+}

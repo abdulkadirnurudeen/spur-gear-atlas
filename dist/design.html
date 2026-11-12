@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173e35">
+  <meta name="description" content="Choose assessed gear and load options, rank compatible perforations and export a reproducible engineering decision record.">
+  <title>Design check — SpurAtlas</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body data-page="design">
+<a class="skip" href="#top">Skip to page content</a>
+<header class="site-header">
+  <a href="index.html" class="brand" aria-label="SpurAtlas home"><span class="brand-mark" aria-hidden="true">S<span>•</span></span><span>SpurAtlas<span class="brand-sub">GEAR DESIGN RESEARCH</span></span></a>
+  <button class="menu-toggle" id="menu-toggle" aria-controls="main-nav" aria-expanded="false">Menu <span aria-hidden="true"><svg class="icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5H17M3 10H17M3 15H17"/></svg></span></button>
+  <nav id="main-nav" aria-label="Main navigation"><a href="design.html" aria-current="page">Design check</a><a href="explore.html">Explore</a><a href="carbon.html">Carbon payback</a><a href="evidence.html">Evidence & methods</a><a href="about.html">About</a></nav>
+  <a class="header-link" href="https://doi.org/10.5281/zenodo.24144925" target="_blank" rel="noopener">Source record <span aria-hidden="true"><svg class="icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16L16 4M4 4H16V16"/></svg></span></a>
+</header>
+<main id="top" tabindex="-1"><div class="wrap page-trail"><div><a href="index.html">Home</a><span aria-hidden="true"> / </span><span>Design check</span></div></div><div class="wrap page-error" id="page-error" role="alert" hidden><p>The research data could not be loaded. Reload this page or use the supporting source record.</p><button id="page-retry" class="button ghost small">Reload page</button></div>  <section class="section wrap design-section" id="design" aria-labelledby="design-title">
+    <div class="section-heading"><div><span class="section-number">START / DESIGN CHECK</span><h1 id="design-title">A justified shortlist for your gear.</h1><p>Choose an assessed gear and operating condition, compare compatible openings and inspect the evidence behind the choice. Each menu contains the available options for this comparison.</p></div><a class="subtle-link" href="data/reproduction-bundle.zip" download>Download the reproducible calculation package ↓</a></div>
+    <p id="design-loading" role="status">Loading case-linked engineering evidence…</p>
+    <div id="design-tool" hidden>
+    <form id="design-form" class="design-form">
+      <div class="design-form-head"><h3>1. Define the comparison</h3><button type="button" class="link-button" id="use-explorer">Use the reference explorer’s selection</button></div>
+      <p class="form-note menu-guidance">Choose from the supported entries below. Linked menus update together and the results refresh automatically. Some fields have one currently assessed value.</p><p id="design-link-note" class="form-note" role="status" hidden></p><fieldset><legend>Gear specification</legend><div class="input-grid">
+        <label>Tooth count<select name="teeth" required></select></label>
+        <label>Pitch diameter <span>mm</span><select name="pitchDiameter" required></select></label>
+        <label>Face width <span>mm</span><select name="faceWidth" required></select></label>
+        <label>Bore diameter <span>mm</span><select name="boreDiameter" required></select></label>
+        <label>Pressure angle <span>degrees</span><select name="pressureAngle" required></select></label>
+        <div class="derived-module"><span>Module · pitch diameter / teeth</span><strong id="design-module"></strong><small>Spur gear · helix angle 0°</small></div>
+      </div></fieldset>
+      <fieldset><legend>Loading and material</legend><div class="input-grid">
+        <label>Retained load mixture<select name="lambda"><option value="0">0% T · rated-power reference</option><option value="0.25">25% T + 75% P</option><option value="0.5">50% T + 50% P</option><option value="0.75">75% T + 25% P</option><option value="1">100% T · peak-torque reference</option></select></label>
+        <label>Torque <span>Nm</span><select name="torqueNm" required></select></label>
+        <label>Speed <span>rpm</span><select name="speedRpm" required></select></label>
+        <label class="wide-input">Material condition<select name="material"></select></label>
+      </div><p class="form-note">Torque, speed and load mixture are linked: selecting any one updates the other two. T and P are the two documented operating references. Their mixture combines force and centrifugal-load components; it is not the percentage of time spent at each condition.</p><label class="coverage-select">Assessment coverage<select name="allMixtures"><option value="false">Selected load mixture</option><option value="true">All five retained load mixtures</option></select></label></fieldset>
+      <fieldset><legend>Decision criteria</legend><div class="input-grid">
+        <label>Required static safety factor<select name="staticTarget" required></select></label>
+        <label>Required fatigue safety factor<select name="fatigueTarget" required></select></label>
+        <label>Fatigue assessment exposure <span>counted stress cycles</span><select name="cycles" required></select></label>
+        <label>Assumed pointwise model error <span>% · sensitivity assumption</span><select name="epsilonPercent" required></select></label>
+        <label>Static formulation<select name="model"><option value="E">E · primary static model</option><option value="H">H · secondary static model</option></select></label>
+        <label>Opening families<select name="family"><option value="all">All compatible families</option><option value="circle">Circular</option><option value="sector">Rounded sector</option><option value="superellipse">Superellipse</option></select></label>
+        <label>Rank compatible cases by<select name="objective"><option value="mass">Greatest material removal</option><option value="margin">Greatest conditional safety margin</option></select></label>
+        <label>Project label <span>optional free text · omitted from share links</span><input name="project" type="text" maxlength="120" placeholder="My gear comparison"></label>
+      </div><p class="form-note">The 5%, 10% and 15% options are the retained decision-sensitivity assumptions, not experimentally established uncertainty bounds. The registered 10% P95 criterion does not guarantee 10% error for an individual prediction.</p></fieldset>
+      <div class="design-submit"><button class="button primary" type="submit">Compare selected options</button><p id="design-dirty" role="status"></p></div>
+    </form>
+    <div id="design-outcome" class="design-outcome" aria-live="polite"></div><p id="design-material" class="form-note"></p>
+    <div id="shortlist-panel" hidden><h3>2. Compare compatible openings</h3><p class="form-note">All compatible records remain visible. The first eligible case follows the selected ranking rule. “Meets conditional screen” depends on the stated error assumption and is not production approval.</p><div class="table-scroll"><table class="shortlist-table"><caption id="shortlist-caption"></caption><thead><tr><th>Layout</th><th>Removed</th><th>Static factor</th><th>Fatigue factor</th><th>Conditional lower factors<br>static / fatigue</th><th>Assessment</th></tr></thead><tbody id="shortlist-body"></tbody></table></div><div id="tradeoff-chart" class="tradeoff-chart"></div></div>
+    <article id="design-case" class="design-case" hidden>
+      <div class="section-heading"><div><span class="section-number">SELECTED CASE / EVIDENCE</span><h3 id="design-case-title"></h3><p id="design-case-basis"></p></div><div class="case-downloads"><a id="case-svg" download>Nominal drawing · SVG ↓</a><a id="case-dxf" download>Sampled profile · DXF ↓</a><a id="case-coordinates" download>Full-precision coordinates · CSV ↓</a><a id="case-evidence" download>Case evidence & raw-field manifest · JSON ↓</a></div></div>
+      <div class="case-evidence-grid"><div id="design-drawing" class="design-drawing"></div><div><h4>Geometry and numerical checks</h4><dl id="case-properties"></dl></div></div>
+      <details class="actual-case-fields"><summary>Inspect this layout’s authentic stress and displacement fields</summary><figure><a id="case-field-link" target="_blank" rel="noopener"><img id="case-field-image" loading="lazy" width="1955" height="1700" alt="Selected case reference fields"></a><figcaption id="case-field-caption"></figcaption></figure></details>
+      <details><summary>Actual regional stresses across tooth positions</summary><p class="form-note">These are case-specific retained FE regional maxima at the T and P anchors. They are not full-field contours or results at an arbitrary combined operating point. The reference material is uniform steel; stress remains unchanged under the declared homogeneous material comparison.</p><div id="case-stress-chart"></div><div class="table-scroll"><table><caption>Largest retained regional von Mises stress across the sampled tooth positions, MPa</caption><thead><tr><th>Region</th><th>T reference</th><th>P reference</th></tr></thead><tbody id="case-regional-rows"></tbody></table></div><a class="subtle-link" href="data/case-stress-summaries.csv" download>Download all 3,552 case-specific stress summaries ↓</a></details>
+      <details><summary>Loads, constraints and evidence limits</summary><p id="case-load-details"></p><p>The bore translations are fixed in the research model. The mating gear and physical contact-load sharing are not resolved. Each selected layout uses a screening mesh; the separate four-geometry refinement study does not establish convergence of this exact layout’s absolute capacity.</p><p>The two anchor-field figures above are recovered from this case’s byte-authenticated raw arrays. Other tooth positions and full histories are identified in the archived field manifest. These are retained reference solutions, not a new solve of the user’s gear. Sampled DXF profiles contain no manufacturing tolerances, fit specification or production-release authority.</p></details>
+    </article>
+    <section id="matched-carbon-panel" class="matched-carbon-panel" hidden aria-labelledby="matched-carbon-title"><h3 id="matched-carbon-title">3. Assess carbon for this same geometry</h3><p id="matched-carbon-case"></p><p class="form-note">The retained route equation is evaluated using the selected opening area and perimeter. Inputs below define a new planning scenario. Milling uses the retained geometry-specific roughing and finishing recipe. The recommended tools, applied operations and electricity breakdown are shown below.</p>
+      <div id="milling-recipe"></div><form id="matched-carbon-form"><div class="input-grid">
+        <label>Electricity factor <span>kg CO₂e/kWh</span><input data-carbon="grid" type="number" min="0" step="any" required></label>
+        <label>Mass-related fuel saving <span>L/(100 miles · 100 kg)</span><input data-carbon="frv" type="number" min="0" step="any" required></label>
+        <label>Designer service mileage <span>miles · approximate</span><input data-carbon="distanceKm" type="number" min="0" step="any" required></label>
+        <label>Counted stress cycles per mile <span>declared mapping</span><input data-carbon="cyclesPerKm" type="number" min="0" step="any" required></label>
+        <label>Service saving retained <span>fraction · 0 to 1</span><input data-carbon="savingFraction" type="number" min="0" max="1" step="any" required></label>
+        <label>Additional uncounted burden <span>kg CO₂e</span><input data-carbon="extraBurden" type="number" min="0" step="any" required></label>
+      </div><details><summary>Machine, cutter and wire-EDM inputs</summary><div class="input-grid">
+        <label>Energized base power <span>kW</span><input data-carbon="baseKW" type="number" min="0" step="any" required></label>
+        <label>Incremental drive efficiency <span>fraction</span><input data-carbon="efficiency" type="number" min="0.001" max="1" step="any" required></label>
+        <label>Non-cutting time per setup <span>min</span><input data-carbon="noncutMinutes" type="number" min="0" step="any" required></label>
+        <label>Allocated setup count<input data-carbon="setupCount" type="number" min="0" step="any" required></label>
+        <label>Chip press dry feed <span>kg/h</span><input data-carbon="pressKgH" type="number" min="0.001" step="any" required></label>
+        <label>Roughing cutter diameter <span>mm · geometry-checked</span><input data-carbon="bulkCutterMm" type="number" min="0.001" step="any" readonly required></label>
+        <label>Roughing feed <span>mm/min</span><input data-carbon="bulkFeedMmMin" type="number" min="0.001" step="any" required></label>
+        <label>Roughing speed <span>rpm</span><input data-carbon="bulkRpm" type="number" min="0.001" step="any" required></label>
+        <label>Roughing cutter flutes<input data-carbon="bulkFlutes" type="number" min="1" step="1" required></label>
+        <label>Roughing axial depth <span>mm</span><input data-carbon="bulkAxialDepthMm" type="number" min="0.001" step="any" required></label>
+        <label>Roughing radial engagement <span>mm</span><input data-carbon="bulkRadialEngagementMm" type="number" min="0.001" step="any" required></label>
+        <label>Finishing cutter diameter <span>mm · geometry-checked</span><input data-carbon="cutterMm" type="number" min="0.001" step="any" readonly required></label>
+        <label>Finishing feed <span>mm/min</span><input data-carbon="feedMmMin" type="number" min="0.001" step="any" required></label>
+        <label>Finishing speed <span>rpm</span><input data-carbon="rpm" type="number" min="0.001" step="any" required></label>
+        <label>Finishing cutter flutes<input data-carbon="flutes" type="number" min="1" step="1" required></label>
+        <label>Finishing axial depth <span>mm</span><input data-carbon="axialDepthMm" type="number" min="0.001" step="any" required></label>
+        <label>Finishing radial engagement <span>mm</span><input data-carbon="radialEngagementMm" type="number" min="0.001" step="any" required></label>
+        <label>Wire kerf <span>mm</span><input data-carbon="kerfMm" type="number" min="0.001" step="any" required></label>
+      </div></details><button class="button ghost small" type="submit">Recalculate matched carbon</button><button class="button ghost small" id="restore-milling-recipe" type="button">Restore recommended recipe</button><p id="carbon-dirty" role="status"></p></form>
+      <div id="matched-carbon-results" aria-live="polite"></div><div id="production-capacity-output" aria-live="polite"></div><details><summary>System boundary and fixed reference inputs</summary><p id="carbon-fixed-inputs"></p><p>The comparison starts from the same steel blank. It includes modeled opening manufacture, allocated chip pressing and scrap transport, plus the declared mass-related road-fuel saving. Tool production, maintenance, machine manufacture, lubricant, treatment effects, end-of-life credits and replacement effects are not fully inventoried. EDM water input is an inventory quantity, not a water-footprint impact score. Add a separate burden above to test omitted terms.</p><p>This is a conditional climate comparison. Product LCA conformity, EPD status, water footprint and production process capability are not established. Road distance is not a prediction of component fatigue life.</p></details>
+    </section>
+    <section class="assessment-panel" aria-labelledby="assessment-title"><h3 id="assessment-title">4. Review what supports the decision</h3><div class="table-scroll"><table><thead><tr><th>Assessment</th><th>Established status</th><th>Evidence needed to extend it</th></tr></thead><tbody id="assessment-status"></tbody></table></div><details><summary>Prediction error, uncertainty and the power-law-based equations</summary><div id="model-evidence"></div></details><p class="form-note">The standards links identify the relevant engineering frameworks. Their presence is not a claim of certification or completed conformity assessment.</p></section>
+    <div class="engineering-export"><div><h3>5. Keep a reproducible decision record</h3><p>Exports include the applied requirements, all compatible outcomes, selected-case evidence, coefficients, source hashes, declared carbon inputs and outstanding assessments.</p></div><div class="export-buttons"><button class="button primary small" id="design-report" type="button">Download printable report · HTML</button><button class="button ghost small" id="design-json" type="button">Full calculation · JSON</button><button class="button ghost small" id="design-csv" type="button">Shortlist · CSV</button><button class="button ghost small" id="design-share" type="button">Copy design link</button></div><p id="design-export-status" role="status"></p></div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer wrap"><div class="footer-brand">SpurAtlas <span>GEAR ATLAS</span></div><p>© 2026 Abdulkadir Oshioze Nurudeen<br>Research tool 0.6.0 · 12 November 2026</p><div><a href="data/DATA-LICENCE.txt" target="_blank">Data · CC BY 4.0</a><a href="data/SOFTWARE-LICENCE.txt" target="_blank">Software · MIT</a><a href="#top">Back to top <svg class="icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17V3M4 9L10 3L16 9"/></svg></a></div></footer>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<noscript><div class="noscript">The interactive atlas needs JavaScript. You can still <a href="data/test-responses.csv">download the reference data</a> or <a href="https://doi.org/10.5281/zenodo.24144925">read the source record</a>.</div></noscript>
+</body>
+</html>

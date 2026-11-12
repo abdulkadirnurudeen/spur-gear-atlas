@@ -1,0 +1,1 @@
+{"name":"spuratlas","version":"0.6.0","private":true,"type":"module","description":"Evidence-linked interactive atlas of perforated spur-gear retention and manufacturing carbon payback.","scripts":{"test":"node --test tests/*.test.js"}}
